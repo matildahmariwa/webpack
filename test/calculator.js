@@ -1,5 +1,6 @@
 //'use strict';
 
+
 window.calculator = window.calculator || {};
 
 (function() {

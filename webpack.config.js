@@ -24,7 +24,7 @@ const htmlplugin=require('html-webpack-plugin');
  *
  */
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /*
  * We've enabled TerserPlugin for you! This minifies your app
@@ -42,9 +42,10 @@ module.exports = {
 	mode: 'development',
 	entry: './test/calculator.js.js',
    watch:true,
+
 	plugins: [
 		new webpack.ProgressPlugin(),
-		new MiniCssExtractPlugin({ filename: 'main.[chunkhash].css' }),
+		// new MiniCssExtractPlugin({ filename: 'main.[chunkhash].css' }),
 		new workboxPlugin.GenerateSW({
 			swDest: 'sw.js',
 			clientsClaim: true,
@@ -52,7 +53,10 @@ module.exports = {
 		}),
 		new htmlplugin(
 			{
-				title:'events'
+				// title:'events'
+				template: './events.html',
+				filename: './index.html'
+
 			}
 		)
 
@@ -71,12 +75,12 @@ module.exports = {
 				loader: 'babel-loader'
 			},
 			{
-				test: /.(scss|css)$/,
+				test: /\.(s*)css$/,
 
 				use: [
-					{
-						loader: MiniCssExtractPlugin.loader
-					},
+					// {
+					// 	loader: MiniCssExtractPlugin.loader
+					// },
 					{
 						loader: 'style-loader'
 					},
