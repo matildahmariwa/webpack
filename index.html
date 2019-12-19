@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <body>
+    <p id="demo"></p>
+    <script>
+        //class and object
+      function employee(name, department, age, height) {
+        this.name = name;
+        this.department = department;
+        this.age = age;
+        this.height = height;
+      }
+      var employee = new employee();
+      employee.name = "Matildah";
+      employee.department = "Software";
+      employee.age = 50;
+      employee.height = "5'4";
+
+      document.getElementById("demo").innerHTML =
+        employee.name +
+        " is " +
+        employee.age +
+        " years old" +
+        "and is in " +
+        employee.department;
+    </script>
+    
+  </body>
+</html>
